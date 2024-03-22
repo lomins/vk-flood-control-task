@@ -1,5 +1,5 @@
 flood-control:
-  time-interval: 10s
+  time-interval: 7s
   call-limit-count: 3
 
 redis:
