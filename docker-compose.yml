@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  flood-control:
+    build: .
+    image: flood-control:v1
+    restart: always
+    depends_on:
+      redis:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    networks:
+      - net
+
+  redis:
+    image: redis:7.2-alpine3.19
+    restart: always
+    volumes:
+      - redis:/data/db/redis
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
+
+volumes:
+  redis:

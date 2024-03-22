@@ -1,0 +1,8 @@
+flood-control:
+  time-interval: 10s
+  call-limit-count: 3
+
+redis:
+  host: redis
+  port: 6379
+  database: 0
